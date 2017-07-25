@@ -1,0 +1,54 @@
+html, body, #root {
+  height: 100%;
+}
+
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-search {
+  width: 400px;
+  margin-top: 5px;
+}
+
+.App-search .Select-arrow-zone {
+  display: none;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(/background.jpg) center center;
+  background-size: cover;
+  height: 100%;
+}
+
+.login-page form {
+  padding: 30px;
+  border: 1px solid gray;
+  background: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  width: 250px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

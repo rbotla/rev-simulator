@@ -1,0 +1,44 @@
+
+
+https://auth0.com/blog/secure-your-react-and-redux-app-with-jwt-authentication/
+https://github.com/auth0/node-jsonwebtoken
+https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens
+https://github.com/hamiltondanielb?tab=overview&from=2017-02-01&to=2017-02-28&utf8=%E2%9C%93
+
+
+src
+	- components
+		- auth
+			- JSX
+			- CSS
+	- services
+		- auth
+			- actions - API
+			- reducer
+			- constants (can have part of actions)
+			- 
+		- protfolio
+			- actions
+			- reducer
+		- main_reducer.js
+server
+	- apis
+		- portfolio-api
+			- manage-portfolo.js
+			- 
+		- auth-api.js
+	- middleware
+		- ...
+	- utilities
+	- routes.js
+	- server-dev.js
+	- server-prod.js
+
+
+
+_ for CSS
+
+
+
+TODOS:
+// Create Analyis route and link tab to route

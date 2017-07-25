@@ -1,0 +1,74 @@
+{
+	"systems": [
+		{
+			"name":"Ultipro",
+			"description": "HR system used for...",
+			"features": [
+				"Salary",
+				"Employee information",
+				"W2 tax documents",
+				"Employee Performance Management",
+			],
+		},
+		{},
+		{},
+	],
+	"system-connections": [
+		{
+			"source": "Ultipro",
+			"target": {},
+			"source-hover": {},
+			"target-hover": {},
+			"st-connection": {
+				"exists": true,
+			},
+			"ts-connection": {
+				"exists": true,
+			},
+			"st-connection-text": "",
+			"tt-connection-text": "",
+		},
+		{
+			"source": {},
+			"target": {},
+			"source-hover": {},
+			"target-hover": {},
+			"st-connection": {
+				"exists": true,
+			},
+			"ts-connection": {
+				"exists": true,
+			},
+			"st-connection-text": "",
+			"tt-connection-text": "",
+		},
+		{
+			"source": {},
+			"target": {},
+			"source-hover": {},
+			"target-hover": {},
+			"st-connection": {
+				"exists": true,
+			},
+			"ts-connection": {
+				"exists": true,
+			},
+			"st-connection-text": "",
+			"tt-connection-text": "",
+		},
+		{
+			"source": {},
+			"target": {},
+			"source-hover": {},
+			"target-hover": {},
+			"st-connection": {
+				"exists": true,
+			},
+			"ts-connection": {
+				"exists": true,
+			},
+			"st-connection-text": "",
+			"tt-connection-text": "",
+		},
+	]
+}
