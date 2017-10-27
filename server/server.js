@@ -30,11 +30,8 @@ app.use(function (req, res, next) {
     }
 });
 
-require('./models/objective'); // Load schema to have it available for server
-require('./models/employee');
-require('./models/config');
-require('./models/comment');
-require('./models/notification');
+require('./models/Agreement'); // Load schema to have it available for server
+require('./models/AgreementLine'); // Load schema to have it available for server
 require('./models/users');
 app.use('/api', require('./routes'));
 

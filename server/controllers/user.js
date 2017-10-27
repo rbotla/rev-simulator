@@ -1,6 +1,5 @@
 var mongoose = require('mongoose'),
 User = mongoose.model('User');
-Employee = mongoose.model('Employee');
 var config = require('../config');
 var jwt = require('jsonwebtoken');
 

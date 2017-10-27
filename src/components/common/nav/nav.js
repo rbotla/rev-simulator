@@ -47,7 +47,7 @@ class Nav extends Component {
             <IconButton tooltip="Configuration" href="/config">
               <FontIcon className="material-icons">tune</FontIcon>
             </IconButton>
-            <IconButton tooltip="Staging Data" href="/staging">
+            <IconButton tooltip="Data" href="/staging">
               <FontIcon className="material-icons">device_hub</FontIcon>
             </IconButton>
             <IconButton tooltip="Run Calculations" href="/staging">
