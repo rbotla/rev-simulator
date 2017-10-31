@@ -44,32 +44,42 @@ class SearchAgreement extends Component {
 		return (
 			<div>
 			<br />
-				<RaisedButton label="Create A New Agreement" primary={true}/>
-			<br />
+				<RaisedButton label="Create A New Agreement" primary={true} href={'/staging/create-agreement'}/>
+			<br/>
 
 			  <Table>
 			    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
 			      <TableRow>
-			        <TableHeaderColumn>ID</TableHeaderColumn>
-			        <TableHeaderColumn>Parent Agreement Id</TableHeaderColumn>
-			        <TableHeaderColumn># Agreement Lines</TableHeaderColumn>			        
+			        <TableHeaderColumn style={ {width: '2rem'} }>Id</TableHeaderColumn>
+			        <TableHeaderColumn style={ {width: '2rem'} }>Parent Id</TableHeaderColumn>
 			        <TableHeaderColumn>Customer Name</TableHeaderColumn>
 			        <TableHeaderColumn>Agreement Type</TableHeaderColumn>
 			        <TableHeaderColumn>Agreement Name</TableHeaderColumn>
-			        <TableHeaderColumn>Grouping & Treatment</TableHeaderColumn>
+			        <TableHeaderColumn>View Hierarchy</TableHeaderColumn>
+			        <TableHeaderColumn>Edit</TableHeaderColumn>
+			        <TableHeaderColumn style={ {whiteSpace: 'normal', wordWrap: 'break-word'} }>Revenue Contract Grouping & Treatment</TableHeaderColumn>
 			      </TableRow>
 			    </TableHeader>
 			    <TableBody displayRowCheckbox={false}>
 			    	{
-							agreements.map( x => {
+							agreements.map( (x, index) => {
 								return (
-						      <TableRow>
-						        <TableRowColumn>{x.id}</TableRowColumn>
-						        <TableRowColumn>{x.parentAgreementId}</TableRowColumn>
-						        <TableRowColumn>{x.alines? x.alines.length: 0}</TableRowColumn>
+						      <TableRow key={index}>
+						        <TableRowColumn style={ {width: '2rem'} }>{x.id}</TableRowColumn>
+						        <TableRowColumn style={ {width: '2rem'} }>{x.parentAgreementId}</TableRowColumn>
 						        <TableRowColumn>{x.customerName}</TableRowColumn>
 						        <TableRowColumn>{x.agreementType}</TableRowColumn>
 						        <TableRowColumn>{x.agreementName}</TableRowColumn>
+						        <TableRowColumn>
+					            <IconButton tooltip="View Agreement Hierarchy" onClick={() => this.redirectToAgreementTreatmentPage(x, agreements)}>
+					              <FontIcon className="material-icons">group_work</FontIcon>
+					            </IconButton>
+						        </TableRowColumn>
+						        <TableRowColumn>
+					            <IconButton tooltip="Edit Agreement" onClick={() => this.redirectToAgreementTreatmentPage(x, agreements)}>
+					              <FontIcon className="material-icons">create</FontIcon>
+					            </IconButton>
+						        </TableRowColumn>
 						        <TableRowColumn>
 					            <IconButton tooltip="Contract Grouping & Treatment" onClick={() => this.redirectToAgreementTreatmentPage(x, agreements)}>
 					              <FontIcon className="material-icons">low_priority</FontIcon>

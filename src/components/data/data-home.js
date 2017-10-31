@@ -11,7 +11,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import SearchAgreement from './agreement/revenue-contract-grouping/search-agreement'; 
+import SearchAgreement from './agreement/search-agreement'; 
 
 const muiTheme = getMuiTheme({
   palette: {

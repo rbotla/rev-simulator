@@ -39,8 +39,8 @@ class POBInfo extends Component {
           style={{width: '95%', borderStyle:'outset'}}
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'center', vertical: 'bottom'}}
-          targetOrigin={{horizontal: 'center', vertical: 'bottom'}}
+          anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
+          targetOrigin={{horizontal: 'middle', vertical: 'bottom'}}
           onRequestClose={this.handleRequestClose}
         >
           <div style={{margin: '10px', fontSize: 'small'}}>

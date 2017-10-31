@@ -48,9 +48,7 @@ class ContractTreatmentWizard extends React.Component {
 
       case 1:
         return (
-          <p>
-            <RevenueContractTreatment />
-          </p>
+          <RevenueContractTreatment />
         );
 
       case 2:

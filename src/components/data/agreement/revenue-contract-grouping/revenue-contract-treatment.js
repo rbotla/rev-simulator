@@ -47,9 +47,9 @@ class RevenueContractTreatment extends Component {
 		    <TableBody displayRowCheckbox={false} deselectOnClickaway={false}>
 		    	{
 						revenueContracts ?
-						revenueContracts.map( x => {
+						revenueContracts.map( (x, index) => {
 							return (
-					      <TableRow>
+					      <TableRow key={index}>
 					        <TableRowColumn>{x.revCId}</TableRowColumn>
 					        <TableRowColumn>
 						        <SelectField

@@ -5,6 +5,7 @@ import * as Colors from 'material-ui/styles/colors';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import AgreementLinesByPoB from './agreement-lines-pob';
 import AgreementLinesList from './alines-list/agreement-lines-list';
+import Banner from '../banner';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -16,20 +17,6 @@ const muiTheme = getMuiTheme({
     alternateTextColor: Colors.darkBlack
   }
 });
-
-const style = {
-	header: {
-    borderBottomColor: 'black',
-    borderBottomStyle: 'double',
-    padding: '6px',
-    backgroundColor: '#C0C0C0',
-    marginLeft: '10px',
-    marginRight: '10px',
-    color: 'black',
-    borderTopRightRadius: '2em', 
-    fontSize: 'medium'
-	}
-}
 
 class AgreementTreatment extends Component {
 	constructor (props) {
@@ -70,7 +57,7 @@ class AgreementTreatment extends Component {
 				<div>				
 					<AgreementInfo agreement={this.agreement} />
 
-	      	<SectionHeader title={'Agreement Lines'} />
+	      	<Banner title={'Agreement Lines'} />
 	      	<AgreementLinesList id={this.agreement.id} alines={this.agreement.alines} />
 				</div>
 	    </MuiThemeProvider>
@@ -91,10 +78,6 @@ class AgreementTreatment extends Component {
 		)
 	}
 }
-
-const SectionHeader = ({title}) => (
-	<div style={style.header}>{title}</div>
-)
 
 const AgreementInfo = ({agreement}) => (
 	<div style={{padding: '10px'}}>

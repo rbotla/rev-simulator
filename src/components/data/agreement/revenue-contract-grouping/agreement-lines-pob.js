@@ -69,11 +69,11 @@ class AgreementLinesByPoB extends Component {
 		    <TableBody displayRowCheckbox={false} deselectOnClickaway={false}>
 		    	{		    		
 						this.props.pobALines ?
-						this.props.pobALines.map( x => {
+						this.props.pobALines.map( (x, index) => {
 							const withinSSP = (x.unit_price >= x.ssp_max || x.unit_price <= x.ssp_max);
 							const sameAgreement = this.props.currentAgreementId === x.aid;
 							return (
-					      <TableRow style={{backgroundColor: sameAgreement ? '#ffff99' : ''}}>
+					      <TableRow key={index} style={{backgroundColor: sameAgreement ? '#ffff99' : ''}}>
 					        <TableRowColumn>{x.aid}</TableRowColumn>
 					        <TableRowColumn>{x.alid}</TableRowColumn>
 					        <TableRowColumn>{x.product}</TableRowColumn>

@@ -6,6 +6,7 @@ import ConfigHome from './components/config/config-home';
 import PageNotFound from './components/page-not-found';
 import Login from './components/auth/login';
 import AgreementTreatment from './components/data/agreement/revenue-contract-grouping/agreement-treatment';
+import CreateAgreement from './components/data/agreement/create-agreement/create-agreement';
 import ContractTreatmentWizard from './components/data/agreement/revenue-contract-grouping/contract-treatment-wizard';
 
 function checkLogin(nextState, replace) {
@@ -26,6 +27,7 @@ export default (
       <Route path="/staging" component={DataHome} />
       <Route path="/staging/treatment" component={AgreementTreatment} />
       <Route path="/staging/contract-treatment" component={ContractTreatmentWizard} />
+      <Route path="/staging/create-agreement" component={CreateAgreement} />
       <Route path="/graph" />
       <Route path="*" component={PageNotFound} />
     </Route>

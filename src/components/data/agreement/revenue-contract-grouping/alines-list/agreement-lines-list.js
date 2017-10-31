@@ -54,30 +54,31 @@ class AgreementLinesList extends Component {
             <TableHeaderColumn style={ {width: '2rem'} }>Line ID</TableHeaderColumn>
             <TableHeaderColumn style={ {width: '2rem'} }>PoB Id</TableHeaderColumn>
             <TableHeaderColumn style={ {width: '5rem'} }>PoB Name</TableHeaderColumn>
-            <TableHeaderColumn style={ {width: '3rem', whiteSpace: 'normal', wordWrap: 'break-word'} }>Related Agrmnt. Lines</TableHeaderColumn>
             <TableHeaderColumn>Product Name</TableHeaderColumn>
             <TableHeaderColumn>Fee Type</TableHeaderColumn>
+            <TableHeaderColumn style={ {width: '3rem', whiteSpace: 'normal', wordWrap: 'break-word'} }>Related Agrmnt. Lines</TableHeaderColumn>
             <TableHeaderColumn style={ {width: '2rem'} }>At SSP?</TableHeaderColumn>
             <TableHeaderColumn>New Rev Contract Flag</TableHeaderColumn>
             <TableHeaderColumn>Rev Contract Id</TableHeaderColumn>
+            <TableHeaderColumn style={ {whiteSpace: 'normal', wordWrap: 'break-word'} }>Auto Select Info.</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} deselectOnClickaway={false}>
         	{
     				this.state.alines ?
-    				this.state.alines.map( x => {
+    				this.state.alines.map( (x, index) => {
               const withinSSP = (x.unit_price >= x.ssp_min) && (x.unit_price <= x.ssp_max);
               return (
-    			      <TableRow striped={true}>
+    			      <TableRow striped={true} key={index}>
     			        { this.state.id? null: <TableRowColumn>{this.state.id? this.state.id: x.aid}</TableRowColumn> }
     			        <TableRowColumn style={ {width: '2rem'} }>{x.alid}</TableRowColumn>
                   <TableRowColumn style={ {width: '2rem'} }>{x.pobId}</TableRowColumn>
                   <TableRowColumn style={ {width: '5rem'} }>{x.PoBName}</TableRowColumn>
+    			        <TableRowColumn>{x.product}</TableRowColumn>
+    			        <TableRowColumn>{x.feetype}</TableRowColumn>
                   <TableRowColumn style={ {width: '3rem'} }>
                       <POBInfo aline={x} alines={this.state.alines} agreementId={this.state.id} callBackRevContractSelection={this.handleContractIdSelection}/>                
                   </TableRowColumn>
-    			        <TableRowColumn>{x.product}</TableRowColumn>
-    			        <TableRowColumn>{x.feetype}</TableRowColumn>
     			        <TableRowColumn style={ {width: '2rem'} } >
                       <SSPInfo agreement={x} withinSSP={withinSSP}/>
                   </TableRowColumn>
@@ -92,6 +93,11 @@ class AgreementLinesList extends Component {
                   </TableRowColumn>
     			        <TableRowColumn>
                     {this.state.revContractMap[x.alid]}
+                  </TableRowColumn>
+                  <TableRowColumn >
+                    <IconButton>
+                      <FontIcon className="material-icons">info_outline</FontIcon>
+                    </IconButton>
                   </TableRowColumn>
     			      </TableRow>
     					)
